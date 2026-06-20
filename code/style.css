@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+          font-family: "Nunito Sans", sans-serif;
+
+          margin: 0px;
+          background: #f4f6f9;
+          text-align: center;
+
+}
+
+header {
+          filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.354));
+          padding: 10px;
+          background: #fafbfc;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+}
+
+
+
+header>div:nth-child(1) {
+          border-radius: 10px;
+          padding: 10px;
+          background: #313e50;
+}
+
+header>div:nth-child(2) {
+          border-radius: 100px;
+          padding: 10px;
+          background: #eeeff3;
+}
+
+header>div:nth-child(1)>img {
+          width: 50px;
+}
+
+header>div:nth-child(2)>img {
+          width: 20px;
+}
+
+main>h1 {
+          font-family: "Nunito Sans", sans-serif;
+          margin: 0px;
+          margin-top: 30px;
+          font-size: 80px;
+          color: #1e2d3c;
+          letter-spacing: 0px;
+          font-weight: 800;
+}
+
+main>h1>span {
+          color: #faa139;
+
+}
+
+main>p {
+          margin: 0px;
+          color: #64738e;
+          font-size: 17px;
+          letter-spacing: 2px;
+
+}
+#dice_img{
+
+          
+}
+#dice_img>img {
+          margin: 20px;
+          width: 150px;
+
+}
+
+#buttonContainer {
+          gap: 30px;
+          display: flex;
+          width: fit-content;
+          justify-self: center;
+}
+
+#buttonContainer>input {
+          height: 70px;
+          width: 100px;
+          text-align: center;
+          outline: #f99f38;
+          border-radius: 10px;
+          border: 2px solid #f99f38;
+          background: #f8f3ed;
+          justify-self: center;
+          font-size: 1.5em;
+          font-weight: 700;
+          font-family: "Nunito Sans", sans-serif;
+          -webkit-box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
+          box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
+
+}
+
+#buttonContainer>input::placeholder {
+          font-size: 0.6em;
+
+}
+
+
+#buttonContainer>button {
+          background: #f99f38;
+          height: 70px;
+          border: 2px solid #f99f38;
+          width: 300px;
+          border-radius: 10px;
+          justify-self: center;
+          border: none;
+          display: flex;
+          font-family: "Nunito Sans", sans-serif;
+          align-items: center;
+          gap: 30px;
+          justify-content: center;
+          color: white;
+          font-size: 1.5em;
+          font-weight: 700;
+          -webkit-box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
+          box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
+}
+
+
+#buttonContainer>button:hover {
+          background: #ff9e30;
+}
+
+#buttonContainer>button>img {
+          width: 30px;
+}
+
+#diceDBtn {
+          width: fit-content;
+          gap: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          justify-self: center;
+}
+
+#diceDBtn>button {
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          width: 130px;
+          height: 60px;
+          -webkit-box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
+          box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
+          border: none;
+          font-size: 1.2em;
+
+}
+
+#diceDBtn>button:focus-within {
+          border: 1px solid #ff9e30;
+          background: #f9f4ef;
+}
+
+#diceDBtn>button>img {
+          width: 30px;
+          
+
+}
+
+#rollHistory {
+
+          box-shadow: -8px -8px 20px -18px rgba(0, 0, 0, 0.85);
+          margin-top: 70px;
+          margin-bottom: 40px;
+          border-radius: 15px;
+          overflow: auto;
+          width: 60%;
+          background: #f9f4ef;
+          height: 300px;
+          border: 2px solid #ff9e30;
+          justify-self: center;
+          padding-left: 70px;
+          padding-right: 70px;
+}
+
+#rollHistory>div {
+          border-bottom: 1px solid rgb(215, 215, 215);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+}
+
+#rollhead>a {
+          font-family: "Nunito Sans", sans-serif;
+          text-decoration: none;
+          font-size: 20px;
+          color: #f99f38;
+          font-weight: 500;
+
+
+}
