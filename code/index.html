@@ -14,7 +14,7 @@
           <body class="themeBg">
                     <header class="themeBg">
                               <div id="logoContainer"><img src="./img/logo-light.svg" alt=""></div>
-                              <div id="themeContainer" onclick="darkmode()"><img src="./img/moon.png" alt=""></div>
+                              <div id="themeContainer" onclick="switchTheme()"><img src="./img/moon.png" alt=""></div>
 
                     </header>
                     <main>
@@ -36,15 +36,15 @@
                               </div>
                               <h6 class="theme"> Quick Select</h6>
                               <div id="diceDBtn">
-                                        <button class="themeBg" id="d4Btn" onclick="d4()"><img src="./img/dice-d4.png">d4</button>
-                                        <button class="themeBg" id="d6Btn" onclick="d6()"><img src="./img/dice-d6.png">d6</button>
-                                        <button class="themeBg" id="d8Btn" onclick="d8()"><img src="./img/dice-d8.png">d8</button>
-                                        <button class="themeBg" id="d10Btn" onclick="d10()"><img src="./img/dice-d10.png">d10</button>
+                                        <button class="button" id="d4Btn" onclick="d4()"><img src="./img/dice-d4.png">d4</button>
+                                        <button class="button" id="d6Btn" onclick="d6()"><img src="./img/dice-d6.png">d6</button>
+                                        <button class="button" id="d8Btn" onclick="d8()"><img src="./img/dice-d8.png">d8</button>
+                                        <button class="button" id="d10Btn" onclick="d10()"><img src="./img/dice-d10.png">d10</button>
 
                               </div>
                               <div class="themeBg" id="rollHistory">
                                         <div id="rollhead">
-                                                  <h3>Roll History</h3>
+                                                  <h3 class="theme">Roll History</h3>
                                                   <h4 onclick="clearHistory()">Clear history</h4>
                                         </div>
 

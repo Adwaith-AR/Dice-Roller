@@ -202,8 +202,11 @@ main>p {
           display: none !important;
 }
 .dark_bg{
-          background: #1e2a34;
+          background: #1e2a34 !important;
 }
 .dark {
-         color: white;
+         color: white !important;
 }
+.darkBtn{
+          color: white !important;background: #1e2a34 !important;
+          }

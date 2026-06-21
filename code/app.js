@@ -9,6 +9,43 @@ const logoContainer = document.getElementById("logoContainer");;
 const themeContainer = document.getElementById("themeContainer");;
 
 
+
+
+function themeDark(){
+          const text = document.querySelectorAll(".theme");
+          const bg = document.querySelectorAll(".themeBg");
+          const button = document.querySelectorAll(".button");
+          text.forEach(element => {
+                    element.classList.add("dark");
+
+          });
+          bg.forEach(element => {
+                    element.classList.add("dark_bg");
+
+          });
+          button.forEach(element => {
+                    element.classList.add("darkBtn");
+
+          });
+}
+function themeLight() {
+          const text = document.querySelectorAll(".theme");
+          const bg = document.querySelectorAll(".themeBg");
+          const button = document.querySelectorAll(".button");
+          text.forEach(element => {
+                    element.classList.remove("dark");
+
+          });
+          bg.forEach(element => {
+                    element.classList.remove("dark_bg");
+
+          });
+          button.forEach(element => {
+                    element.classList.remove("darkBtn");
+
+          });
+}
+
 d6Btn.classList.add("activeBtn");
 
 let d4BtnS = false;
@@ -18,10 +55,17 @@ let d10BtnS = false;
 let theme = "light"
 
 
-function darkmode(){
+function switchTheme(){
           if (theme=="light"){
+                    themeDark()
                     theme="dark";
                     logoContainer.innerHTML = `<img src="./img/logo-dark.svg" alt="">`
+                    themeContainer.innerHTML = `<img src="./img/moon.png" alt="">`
+          }
+          else if (theme == "dark") {
+                    themeLight()
+                    theme = "light";
+                    logoContainer.innerHTML = `<img src="./img/logo-light.svg" alt="">`
                     themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
           }
 
@@ -104,15 +148,36 @@ function rollDice() {
           RollHistoryContainer.innerHTML = RollHistory.join("");
           outputNumContainer.innerHTML = ` <h2 class="theme" >${values.join(",") }</h2>`;
           DiceImg.innerHTML = img.join("");
+          if (theme == "dark") {
+                    themeDark()
+                    logoContainer.innerHTML = `<img src="./img/logo-dark.svg" alt="">`
+                    themeContainer.innerHTML = `<img src="./img/moon.png" alt="">`
+          }
+          else if (theme == "light") {
+                    themeLight()
+                    logoContainer.innerHTML = `<img src="./img/logo-light.svg" alt="">`
+                    themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
+          }
 
 }
 function clearHistory() {
           const DiceImg = document.getElementById("dice_img");
           const RollHistoryContainer = document.getElementById("rollHistory");
-          const indexofhead = RollHistory.indexOf(`<div id="rollhead"><h3>Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+          const indexofhead = RollHistory.indexOf(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
           RollHistory.splice(indexofhead, 1)
           RollHistory.length = 0;
-          RollHistory.unshift(`<div id="rollhead"><h3>Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+          RollHistory.unshift(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
           RollHistoryContainer.innerHTML = RollHistory.join("");
+          outputNumContainer.innerHTML = ` <h2 class="theme" ></h2>`;
           DiceImg.innerHTML = `<img src="./img/white dice.png" alt=""><img src="./img/orange dice.png" alt="">`;
+          if (theme == "dark") {
+                    themeDark()
+                    logoContainer.innerHTML = `<img src="./img/logo-dark.svg" alt="">`
+                    themeContainer.innerHTML = `<img src="./img/moon.png" alt="">`
+          }
+          else if (theme == "light") {
+                    themeLight()
+                    logoContainer.innerHTML = `<img src="./img/logo-light.svg" alt="">`
+                    themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
+          }
 }
