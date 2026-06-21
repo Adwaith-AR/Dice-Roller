@@ -8,7 +8,9 @@ body {
           text-align: center;
 
 }
-
+button{
+          cursor: pointer;
+}
 header {
           filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.354));
           padding: 10px;
@@ -22,8 +24,7 @@ header {
 
 header>div:nth-child(1) {
           border-radius: 10px;
-          padding: 10px;
-          background: #313e50;
+          padding-left: 10px;
 }
 
 header>div:nth-child(2) {
@@ -33,7 +34,7 @@ header>div:nth-child(2) {
 }
 
 header>div:nth-child(1)>img {
-          width: 50px;
+          width: 70px;
 }
 
 header>div:nth-child(2)>img {
@@ -61,10 +62,7 @@ main>p {
           font-size: 17px;
           letter-spacing: 2px;
 
-}
-#dice_img{
-
-          
+       
 }
 #dice_img>img {
           margin: 20px;
@@ -155,9 +153,9 @@ main>p {
 
 }
 
-#diceDBtn>button:focus-within {
-          border: 1px solid #ff9e30;
-          background: #f9f4ef;
+.activeBtn {
+          border: 1px solid #ff9e30 !important;
+          background: #f9f4ef !important;
 }
 
 #diceDBtn>button>img {
@@ -190,12 +188,22 @@ main>p {
 
 }
 
-#rollhead>a {
+#rollhead>h4 {
           font-family: "Nunito Sans", sans-serif;
           text-decoration: none;
           font-size: 20px;
           color: #f99f38;
           font-weight: 500;
+          cursor: pointer;
 
 
+}
+.hide{
+          display: none !important;
+}
+.dark_bg{
+          background: #1e2a34;
+}
+.dark {
+         color: white;
 }

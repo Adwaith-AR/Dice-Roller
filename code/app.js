@@ -1,22 +1,118 @@
+const RollHistoryContainer = document.getElementById("rollHistory");
+const RollHistory = [];
+RollHistory.push(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+const d4Btn = document.getElementById("d4Btn");
+const d6Btn = document.getElementById("d6Btn");;
+const d8Btn = document.getElementById("d8Btn");;
+const d10Btn = document.getElementById("d10Btn");;
+const logoContainer = document.getElementById("logoContainer");;
+const themeContainer = document.getElementById("themeContainer");;
 
-function rollDice(){
+
+d6Btn.classList.add("activeBtn");
+
+let d4BtnS = false;
+let d6BtnS = true;
+let d8BtnS = false;
+let d10BtnS = false;
+let theme = "light"
+
+
+function darkmode(){
+          if (theme=="light"){
+                    theme="dark";
+                    logoContainer.innerHTML = `<img src="./img/logo-dark.svg" alt="">`
+                    themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
+          }
+
+}
+
+
+function d4() {
+          d4BtnS = true;
+          d6BtnS = false;
+          d8BtnS = false;
+          d10BtnS = false;
+          clearHistory()
+          d4Btn.classList.add("activeBtn");
+          d6Btn.classList.remove("activeBtn");
+          d8Btn.classList.remove("activeBtn");
+          d10Btn.classList.remove("activeBtn");
+
+}
+function d6() {
+          d4BtnS = false;
+          d6BtnS = true;
+          d8BtnS = false;
+          d10BtnS = false;
+          clearHistory()
+          d4Btn.classList.remove("activeBtn");
+          d6Btn.classList.add("activeBtn");
+          d8Btn.classList.remove("activeBtn");
+          d10Btn.classList.remove("activeBtn");
+
+}
+function d8() {
+          d4BtnS = false;
+          d6BtnS = false;
+          d8BtnS = true;
+          d10BtnS = false;
+          clearHistory()
+          d4Btn.classList.remove("activeBtn");
+          d6Btn.classList.remove("activeBtn");
+          d8Btn.classList.add("activeBtn");
+          d10Btn.classList.remove("activeBtn");
+
+}
+function d10() {
+          d4BtnS = false;
+          d6BtnS = false;
+          d8BtnS = false;
+          d10BtnS = true;
+          clearHistory()
+          d10Btn.classList.add("activeBtn");
+          d6Btn.classList.remove("activeBtn");
+          d8Btn.classList.remove("activeBtn");
+          d4Btn.classList.remove("activeBtn");
+
+}
+
+function rollDice() {
           const NumOfDice = document.getElementById("NumOfDice").value;
-          const outPutNum = document.getElementById("outputNum");
+          const outputNumContainer = document.getElementById("outputNumContainer");
           const DiceImg = document.getElementById("dice_img");
+          const RollHistoryContainer = document.getElementById("rollHistory");
           const values = [];
           const img = [];
+          const indexofhead = RollHistory.indexOf(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+          let total = 0;
 
           for (let i = 0; i < NumOfDice; i++) {
                     let value = Math.floor(Math.random() * 6) + 1;
-                    window.console.log(value);
                     values.push(value);
-                    img.push(`<img src="./img/6d${value}.webp" alt="">`);
+                    total = total + value;
+                    img.push(`<img src="./img/d6/6d${value}.webp" alt="">`);
 
 
-                    
+
 
           }
-          outPutNum.textContent = values.join(",");
+          RollHistory.splice(indexofhead, 1)
+          RollHistory.unshift(`<div><p class="theme">${NumOfDice}d6</p><p class="theme">(${values.join(",")})</p><p class="theme">${total}</p></div>`)
+          RollHistory.unshift(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+
+          RollHistoryContainer.innerHTML = RollHistory.join("");
+          outputNumContainer.innerHTML = ` <h2 class="theme" >${values.join(",") }</h2>`;
           DiceImg.innerHTML = img.join("");
-          
+
+}
+function clearHistory() {
+          const DiceImg = document.getElementById("dice_img");
+          const RollHistoryContainer = document.getElementById("rollHistory");
+          const indexofhead = RollHistory.indexOf(`<div id="rollhead"><h3>Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+          RollHistory.splice(indexofhead, 1)
+          RollHistory.length = 0;
+          RollHistory.unshift(`<div id="rollhead"><h3>Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+          RollHistoryContainer.innerHTML = RollHistory.join("");
+          DiceImg.innerHTML = `<img src="./img/white dice.png" alt=""><img src="./img/orange dice.png" alt="">`;
 }
