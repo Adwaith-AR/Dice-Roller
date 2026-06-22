@@ -8,9 +8,11 @@ body {
           text-align: center;
 
 }
-button{
+
+button {
           cursor: pointer;
 }
+
 header {
           filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.354));
           padding: 10px;
@@ -62,11 +64,14 @@ main>p {
           font-size: 17px;
           letter-spacing: 2px;
 
-       
+
 }
+
 #dice_img>img {
           margin: 20px;
           width: 150px;
+          height: 100%;
+          aspect-ratio: 9/10;
 
 }
 
@@ -113,7 +118,7 @@ main>p {
           align-items: center;
           gap: 30px;
           justify-content: center;
-          color: white;
+          color: black;
           font-size: 1.5em;
           font-weight: 700;
           -webkit-box-shadow: 0px 6px 11px -13px rgba(0, 0, 0, 0.85);
@@ -160,7 +165,7 @@ main>p {
 
 #diceDBtn>button>img {
           width: 30px;
-          
+
 
 }
 
@@ -198,15 +203,20 @@ main>p {
 
 
 }
-.hide{
+
+.hide {
           display: none !important;
 }
-.dark_bg{
+
+.dark_bg {
           background: #1e2a34 !important;
 }
+
 .dark {
-         color: white !important;
+          color: white !important;
 }
-.darkBtn{
-          color: white !important;background: #1e2a34 !important;
-          }
+
+.darkBtn {
+          color: white !important;
+          background: #182129 !important;
+}
