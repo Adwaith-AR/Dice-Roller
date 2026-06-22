@@ -82,7 +82,7 @@ function d4() {
           d6BtnS = false;
           d8BtnS = false;
           d10BtnS = false;
-          clearHistory()
+          newD()
           d4Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.remove("activeBtn");
@@ -94,7 +94,7 @@ function d6() {
           d6BtnS = true;
           d8BtnS = false;
           d10BtnS = false;
-          clearHistory()
+          newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.add("activeBtn");
           d8Btn.classList.remove("activeBtn");
@@ -106,7 +106,7 @@ function d8() {
           d6BtnS = false;
           d8BtnS = true;
           d10BtnS = false;
-          clearHistory()
+          newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.add("activeBtn");
@@ -118,7 +118,7 @@ function d10() {
           d6BtnS = false;
           d8BtnS = false;
           d10BtnS = true;
-          clearHistory()
+          newD()
           d10Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.remove("activeBtn");
@@ -173,7 +173,7 @@ function rollDice() {
           }
 
           RollHistory.splice(indexofhead, 1)
-          RollHistory.unshift(`<div><p class="theme">${NumOfDice}d${dice}</p><p class="theme">(${values.join(",")})</p><p class="theme">${total}</p></div>`)
+          RollHistory.unshift(`<div><p class="theme">${dice}d${NumOfDice}</p><p class="theme">(${values.join(",")})</p><p class="theme">${total}</p></div>`)
           RollHistory.unshift(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
 
           RollHistoryContainer.innerHTML = RollHistory.join("");
@@ -211,4 +211,12 @@ function clearHistory() {
                     logoContainer.innerHTML = `<img src="./img/logo-light.svg" alt="">`
                     themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
           }
+}
+function newD(){
+          const DiceImg = document.getElementById("dice_img");
+          outputNumContainer.innerHTML = ` <h2 class="theme" >output</h2>`;
+          DiceImg.innerHTML = `<img src="./img/white dice.png" alt=""><img src="./img/orange dice.png" alt="">`;
+          
+
+
 }

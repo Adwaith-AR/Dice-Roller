@@ -68,10 +68,10 @@ main>p {
 }
 
 #dice_img>img {
+          aspect-ratio: 20/22;
           margin: 20px;
           width: 150px;
           height: 100%;
-          aspect-ratio: 9/10;
 
 }
 
@@ -176,6 +176,7 @@ main>p {
           margin-bottom: 40px;
           border-radius: 15px;
           overflow: auto;
+          scrollbar-width: none;-ms-overflow-style: none;
           width: 60%;
           background: #f9f4ef;
           height: 300px;
@@ -183,6 +184,9 @@ main>p {
           justify-self: center;
           padding-left: 70px;
           padding-right: 70px;
+}
+#rollHistory::-webkit-scrollbar {
+          display: none;
 }
 
 #rollHistory>div {
