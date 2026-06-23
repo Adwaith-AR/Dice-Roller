@@ -27,15 +27,15 @@ function themeDark() {
           const button = document.querySelectorAll(".button");
           text.forEach(element => {
                     element.classList.add("dark");
-                    
+
           });
           bg.forEach(element => {
                     element.classList.add("dark_bg");
-                    
+
           });
           button.forEach(element => {
                     element.classList.add("darkBtn");
-                    
+
           });
 }
 function themeLight() {
@@ -128,17 +128,17 @@ function d10() {
 
 function rollDice() {
           const NumOfDice = document.getElementById("NumOfDice");
-          if (NumOfDice.value == "" || NumOfDice.value <1){
+          if (NumOfDice.value == "" || NumOfDice.value < 1) {
                     NumOfDice.placeholder = "Enter Num";
                     NumOfDice.classList.add("alert")
-                    setTimeout(()=>{
+                    setTimeout(() => {
                               NumOfDice.placeholder = "Num of dice";
                               NumOfDice.classList.remove("alert")
-                    },2000)
+                    }, 2000)
 
           }
-          else if (NumOfDice.value >7){
-                    NumOfDice.value=""
+          else if (NumOfDice.value > 7) {
+                    NumOfDice.value = ""
                     NumOfDice.placeholder = "Max 7";
                     NumOfDice.classList.add("alert")
                     setTimeout(() => {
@@ -146,7 +146,7 @@ function rollDice() {
                               NumOfDice.classList.remove("alert")
                     }, 2000)
           }
-          else if (NumOfDice.value >= 1 && NumOfDice.value <= 7){
+          else if (NumOfDice.value >= 1 && NumOfDice.value <= 7) {
                     const outputNumContainer = document.getElementById("outputNumContainer");
                     const DiceImg = document.getElementById("dice_img");
                     const RollHistoryContainer = document.getElementById("rollHistory");
@@ -232,11 +232,11 @@ function clearHistory() {
                     themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
           }
 }
-function newD(){
+function newD() {
           const DiceImg = document.getElementById("dice_img");
           outputNumContainer.innerHTML = ` <h2 class="theme" >output</h2>`;
           DiceImg.innerHTML = `<img src="./img/white dice.png" alt=""><img src="./img/orange dice.png" alt="">`;
-          
+
 
 
 }

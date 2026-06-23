@@ -1,83 +1,14 @@
-# yooooooooooooooooooooooooooooooooooooooooooooooo
+# Dicer
+*This is a dice roller website that we can use to spin dice*
 
+## Features:
 
+*we can roll multiple dice simultaneously*
+*user can select which type of dice they want to spin eg:D4,D6,D8,D10*
+*user can see there roll history in the history box*
+*user can customize the theme to dark or light*
 
+## Limitations:
 
-
-
-
-
-
-*whbqsd*
-
-*weffawege*
-*gwrgwe*
-*rergwergwergergwegerer*
-*r*
-*reg*
-*rg*
-*reger*
-*gg*
-*gr*
-*rg*
-*g*
-*gr*
-*rgrg*
-*rg*
-*rg*
-*rg*
-*ger*
-*reg*
-*ewg*
-*eg*
-
-*rgrg*
-*r*
-*er*
-*rg*
-*rg*
-*rg*
-*erg*
-*g*
-*e*
-*we*
-*er*
-*rgrewg*
-*rg*
-*wer*
-*rg*
-**g*
-*erg*
-*eg*
-*eg*
-*eg*
-*eg*
-*e*
-*rg*
-*gr*
-*rg*
-*rg*
-*gr*
-*g*
-*g*
-*g*
-*er*
-*wergergewrg*
-*erg*
-*erg*
-*er*
-*gwer*
-*gwerg*
-*ewrgwergqergwe*
-*gegwe*
-*gewr*
-*gwerge*
-*wrgwegw*
-*erwg*
-*werg*
-*wergwe*
-*rgwer*
-*gwer*
-*gwe*
-*gwe*
-*g*
+*users can't roll dice above D10*
+*user's can't roll more than 7 dice simultaneously*
