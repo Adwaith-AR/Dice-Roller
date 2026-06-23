@@ -176,7 +176,8 @@ main>p {
           margin-bottom: 40px;
           border-radius: 15px;
           overflow: auto;
-          scrollbar-width: none;-ms-overflow-style: none;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
           width: 60%;
           background: #f9f4ef;
           height: 300px;
@@ -185,6 +186,7 @@ main>p {
           padding-left: 70px;
           padding-right: 70px;
 }
+
 #rollHistory::-webkit-scrollbar {
           display: none;
 }
@@ -223,4 +225,15 @@ main>p {
 .darkBtn {
           color: white !important;
           background: #182129 !important;
+}
+
+.alert {
+
+          border: 2px solid red !important;
+
+          
+}
+.alert::placeholder{
+          font-size:0.7em !important;
+          color: red !important;
 }

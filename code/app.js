@@ -127,67 +127,87 @@ function d10() {
 }
 
 function rollDice() {
-          const NumOfDice = document.getElementById("NumOfDice").value;
-          const outputNumContainer = document.getElementById("outputNumContainer");
-          const DiceImg = document.getElementById("dice_img");
-          const RollHistoryContainer = document.getElementById("rollHistory");
-          const values = [];
-          const img = [];
-          const indexofhead = RollHistory.indexOf(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
-          let total = 0;
-          let dice = 0;
+          const NumOfDice = document.getElementById("NumOfDice");
+          if (NumOfDice.value == "" || NumOfDice.value <1){
+                    NumOfDice.placeholder = "Enter Num";
+                    NumOfDice.classList.add("alert")
+                    setTimeout(()=>{
+                              NumOfDice.placeholder = "Num of dice";
+                              NumOfDice.classList.remove("alert")
+                    },2000)
 
-          if (d4BtnS) {
-                    dice = 4
-                    for (let i = 0; i < NumOfDice; i++) {
-                              let value = Math.floor(Math.random() * 4) + 1;
-                              values.push(value);
-                              total = total + value;
-                              img.push(`<img src="./img/d4/4d${value}.webp" alt="">`);
-                    }
           }
-          if (d6BtnS) {
-                    dice = 6
-                    for (let i = 0; i < NumOfDice; i++) {
-                              let value = Math.floor(Math.random() * 6) + 1;
-                              values.push(value);
-                              total = total + value;
-                              img.push(`<img src="./img/d6/6d${value}.webp" alt="">`);
-                    }
-          } if (d8BtnS) {
-                    dice = 8
-                    for (let i = 0; i < NumOfDice; i++) {
-                              let value = Math.floor(Math.random() * 8) + 1;
-                              values.push(value);
-                              total = total + value;
-                              img.push(`<img src="./img/d8/8d${value}.webp" alt="">`);
-                    }
-          } if (d10BtnS) {
-                    dice = 10
-                    for (let i = 0; i < NumOfDice; i++) {
-                              let value = Math.floor(Math.random() * 10) + 1;
-                              values.push(value);
-                              total = total + value;
-                              img.push(`<img src="./img/d10/10d${value}.webp" alt="">`);
-                    }
+          else if (NumOfDice.value >7){
+                    NumOfDice.value=""
+                    NumOfDice.placeholder = "Max 7";
+                    NumOfDice.classList.add("alert")
+                    setTimeout(() => {
+                              NumOfDice.placeholder = "Num of dice";
+                              NumOfDice.classList.remove("alert")
+                    }, 2000)
           }
+          else if (NumOfDice.value >= 1 && NumOfDice.value <= 7){
+                    const outputNumContainer = document.getElementById("outputNumContainer");
+                    const DiceImg = document.getElementById("dice_img");
+                    const RollHistoryContainer = document.getElementById("rollHistory");
+                    const values = [];
+                    const img = [];
+                    const indexofhead = RollHistory.indexOf(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+                    let total = 0;
+                    let dice = 0;
 
-          RollHistory.splice(indexofhead, 1)
-          RollHistory.unshift(`<div><p class="theme">${dice}d${NumOfDice}</p><p class="theme">(${values.join(",")})</p><p class="theme">${total}</p></div>`)
-          RollHistory.unshift(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+                    if (d4BtnS) {
+                              dice = 4
+                              for (let i = 0; i < NumOfDice.value; i++) {
+                                        let value = Math.floor(Math.random() * 4) + 1;
+                                        values.push(value);
+                                        total = total + value;
+                                        img.push(`<img src="./img/d4/4d${value}.webp" alt="">`);
+                              }
+                    }
+                    if (d6BtnS) {
+                              dice = 6
+                              for (let i = 0; i < NumOfDice.value; i++) {
+                                        let value = Math.floor(Math.random() * 6) + 1;
+                                        values.push(value);
+                                        total = total + value;
+                                        img.push(`<img src="./img/d6/6d${value}.webp" alt="">`);
+                              }
+                    } if (d8BtnS) {
+                              dice = 8
+                              for (let i = 0; i < NumOfDice.value; i++) {
+                                        let value = Math.floor(Math.random() * 8) + 1;
+                                        values.push(value);
+                                        total = total + value;
+                                        img.push(`<img src="./img/d8/8d${value}.webp" alt="">`);
+                              }
+                    } if (d10BtnS) {
+                              dice = 10
+                              for (let i = 0; i < NumOfDice.value; i++) {
+                                        let value = Math.floor(Math.random() * 10) + 1;
+                                        values.push(value);
+                                        total = total + value;
+                                        img.push(`<img src="./img/d10/10d${value}.webp" alt="">`);
+                              }
+                    }
 
-          RollHistoryContainer.innerHTML = RollHistory.join("");
-          outputNumContainer.innerHTML = ` <h2 class="theme" >${values.join(",")}</h2>`;
-          DiceImg.innerHTML = img.join("");
-          if (theme == "dark") {
-                    themeDark()
-                    logoContainer.innerHTML = `<img src="./img/logo-dark.svg" alt="">`
-                    themeContainer.innerHTML = `<img src="./img/moon.png" alt="">`
-          }
-          else if (theme == "light") {
-                    themeLight()
-                    logoContainer.innerHTML = `<img src="./img/logo-light.svg" alt="">`
-                    themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
+                    RollHistory.splice(indexofhead, 1)
+                    RollHistory.unshift(`<div><p class="theme">${dice}d${NumOfDice.value}</p><p class="theme">(${values.join(",")})</p><p class="theme">${total}</p></div>`)
+                    RollHistory.unshift(`<div id="rollhead"><h3 class="theme">Roll History</h3><h4 onclick="clearHistory()">Clear history</h4></div>`)
+
+                    RollHistoryContainer.innerHTML = RollHistory.join("");
+                    outputNumContainer.innerHTML = ` <h2 class="theme" >${values.join(",")}</h2>`;
+                    DiceImg.innerHTML = img.join("");
+                    if (theme == "dark") {
+                              themeDark()
+                              logoContainer.innerHTML = `<img src="./img/logo-dark.svg" alt="">`
+                              themeContainer.innerHTML = `<img src="./img/moon.png" alt="">`
+                    }
+                    else if (theme == "light") {
+                              themeLight()
+                              logoContainer.innerHTML = `<img src="./img/logo-light.svg" alt="">`
+                              themeContainer.innerHTML = `<img src="./img/sun.png" alt="">`
+                    }
           }
 
 }
