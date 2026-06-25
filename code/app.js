@@ -4,6 +4,7 @@ const d4Btn = document.getElementById("d4Btn");
 const d6Btn = document.getElementById("d6Btn");;
 const d8Btn = document.getElementById("d8Btn");;
 const d10Btn = document.getElementById("d10Btn");;
+const d12Btn = document.getElementById("d12Btn");;
 const rollbutton = document.getElementById("rollbutton");;
 const logoContainer = document.getElementById("logoContainer");;
 const themeContainer = document.getElementById("themeContainer");;
@@ -12,6 +13,7 @@ let d4BtnS = false;
 let d6BtnS = true;
 let d8BtnS = false;
 let d10BtnS = false;
+let d12BtnS = false;
 let theme = "light"
 
 d6Btn.classList.add("activeBtn");
@@ -82,11 +84,13 @@ function d4() {
           d6BtnS = false;
           d8BtnS = false;
           d10BtnS = false;
+          d12BtnS = false;
           newD()
           d4Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.remove("activeBtn");
           d10Btn.classList.remove("activeBtn");
+          d12Btn.classList.remove("activeBtn");
 
 }
 function d6() {
@@ -94,11 +98,13 @@ function d6() {
           d6BtnS = true;
           d8BtnS = false;
           d10BtnS = false;
+          d12BtnS = false;
           newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.add("activeBtn");
           d8Btn.classList.remove("activeBtn");
           d10Btn.classList.remove("activeBtn");
+          d12Btn.classList.remove("activeBtn");
 
 }
 function d8() {
@@ -106,11 +112,13 @@ function d8() {
           d6BtnS = false;
           d8BtnS = true;
           d10BtnS = false;
+          d12BtnS = false;
           newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.add("activeBtn");
           d10Btn.classList.remove("activeBtn");
+          d12Btn.classList.remove("activeBtn");
 
 }
 function d10() {
@@ -118,11 +126,27 @@ function d10() {
           d6BtnS = false;
           d8BtnS = false;
           d10BtnS = true;
+          d12BtnS = false;
           newD()
           d10Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.remove("activeBtn");
           d4Btn.classList.remove("activeBtn");
+          d12Btn.classList.remove("activeBtn");
+
+}
+function d12() {
+          d4BtnS = false;
+          d6BtnS = false;
+          d8BtnS = false;
+          d10BtnS = false;
+          d12BtnS = true;
+          newD()
+          d10Btn.classList.remove("activeBtn");
+          d6Btn.classList.remove("activeBtn");
+          d8Btn.classList.remove("activeBtn");
+          d4Btn.classList.remove("activeBtn");
+          d12Btn.classList.add("activeBtn");
 
 }
 
@@ -188,6 +212,15 @@ function rollDice() {
                                         values.push(value);
                                         total = total + value;
                                         img.push(`<img src="./img/d10/10d${value}.webp" alt="">`);
+                              }
+                    }
+                    if (d12BtnS) {
+                              dice = 12
+                              for (let i = 0; i < NumOfDice.value; i++) {
+                                        let value = Math.floor(Math.random() * 12) + 1;
+                                        values.push(value);
+                                        total = total + value;
+                                        img.push(`<img src="./img/d12/12d${value}.webp" alt="">`);
                               }
                     }
 
