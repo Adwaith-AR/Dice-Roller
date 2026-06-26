@@ -1,4 +1,4 @@
-![Alt Text](./code/img/dice%20icon.webp)
+![Alt Text](./code/img/logo-light.svg)
 # Dicer
 *This is a dice roller website that we can use to spin dice*
 
