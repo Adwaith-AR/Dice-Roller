@@ -5,6 +5,7 @@ const d6Btn = document.getElementById("d6Btn");;
 const d8Btn = document.getElementById("d8Btn");;
 const d10Btn = document.getElementById("d10Btn");;
 const d12Btn = document.getElementById("d12Btn");;
+const d14Btn = document.getElementById("d14Btn");;
 const rollbutton = document.getElementById("rollbutton");;
 const logoContainer = document.getElementById("logoContainer");;
 const themeContainer = document.getElementById("themeContainer");;
@@ -14,6 +15,7 @@ let d6BtnS = true;
 let d8BtnS = false;
 let d10BtnS = false;
 let d12BtnS = false;
+let d14BtnS = false;
 let theme = "light"
 
 d6Btn.classList.add("activeBtn");
@@ -85,6 +87,8 @@ function d4() {
           d8BtnS = false;
           d10BtnS = false;
           d12BtnS = false;
+          d14BtnS = false;
+          d14Btn.classList.add("activeBtn");
           newD()
           d4Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
@@ -99,6 +103,8 @@ function d6() {
           d8BtnS = false;
           d10BtnS = false;
           d12BtnS = false;
+          d14BtnS = false;
+          d14Btn.classList.add("activeBtn");
           newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.add("activeBtn");
@@ -113,6 +119,8 @@ function d8() {
           d8BtnS = true;
           d10BtnS = false;
           d12BtnS = false;
+          d14BtnS = false;
+          d14Btn.classList.add("activeBtn");
           newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.remove("activeBtn");
@@ -128,6 +136,8 @@ function d10() {
           d10BtnS = true;
           d12BtnS = false;
           newD()
+          d14BtnS = false;
+          d14Btn.classList.add("activeBtn");
           d10Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.remove("activeBtn");
@@ -141,6 +151,8 @@ function d12() {
           d8BtnS = false;
           d10BtnS = false;
           d12BtnS = true;
+          d14BtnS = false;
+          d14Btn.classList.add("activeBtn");
           newD()
           d10Btn.classList.remove("activeBtn");
           d6Btn.classList.remove("activeBtn");
@@ -150,6 +162,24 @@ function d12() {
 
 }
 
+function d14() {
+          d4BtnS = false;
+          d6BtnS = false;
+          d8BtnS = false;
+          d10BtnS = false;
+          d14BtnS = true;
+          d12BtnS = false;
+          
+
+          newD()
+          d10Btn.classList.remove("activeBtn");
+          d6Btn.classList.remove("activeBtn");
+          d8Btn.classList.remove("activeBtn");
+          d4Btn.classList.remove("activeBtn");
+          d14Btn.classList.add("activeBtn");
+          d12Btn.classList.remove("activeBtn");
+
+}
 function rollDice() {
           const NumOfDice = document.getElementById("NumOfDice");
           if (NumOfDice.value == "" || NumOfDice.value < 1) {
@@ -221,6 +251,15 @@ function rollDice() {
                                         values.push(value);
                                         total = total + value;
                                         img.push(`<img src="./img/d12/12d${value}.webp" alt="">`);
+                              }
+                    }
+                    if (d14BtnS) {
+                              dice = 14
+                              for (let i = 0; i < NumOfDice.value; i++) {
+                                        let value = Math.floor(Math.random() * 14) + 1;
+                                        values.push(value);
+                                        total = total + value;
+                                        img.push(`<img src="./img/d14/14d${value}.webp" alt="">`);
                               }
                     }
 
