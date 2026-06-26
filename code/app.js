@@ -88,7 +88,7 @@ function d4() {
           d10BtnS = false;
           d12BtnS = false;
           d14BtnS = false;
-          d14Btn.classList.add("activeBtn");
+          d14Btn.classList.remove("activeBtn");
           newD()
           d4Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
@@ -104,7 +104,7 @@ function d6() {
           d10BtnS = false;
           d12BtnS = false;
           d14BtnS = false;
-          d14Btn.classList.add("activeBtn");
+          d14Btn.classList.remove("activeBtn");
           newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.add("activeBtn");
@@ -120,7 +120,7 @@ function d8() {
           d10BtnS = false;
           d12BtnS = false;
           d14BtnS = false;
-          d14Btn.classList.add("activeBtn");
+          d14Btn.classList.remove("activeBtn");
           newD()
           d4Btn.classList.remove("activeBtn");
           d6Btn.classList.remove("activeBtn");
@@ -137,7 +137,7 @@ function d10() {
           d12BtnS = false;
           newD()
           d14BtnS = false;
-          d14Btn.classList.add("activeBtn");
+          d14Btn.classList.remove("activeBtn");
           d10Btn.classList.add("activeBtn");
           d6Btn.classList.remove("activeBtn");
           d8Btn.classList.remove("activeBtn");
@@ -152,7 +152,7 @@ function d12() {
           d10BtnS = false;
           d12BtnS = true;
           d14BtnS = false;
-          d14Btn.classList.add("activeBtn");
+          d14Btn.classList.remove("activeBtn");
           newD()
           d10Btn.classList.remove("activeBtn");
           d6Btn.classList.remove("activeBtn");

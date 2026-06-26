@@ -13,3 +13,7 @@
 
 *users can't roll dice above D10*
 *user's can't roll more than 7 dice simultaneously*
+![Alt Text](./1.png)
+![Alt Text](./2.png)
+![Alt Text](./3.png)
+![Alt Text](./4.png)
